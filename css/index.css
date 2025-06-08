@@ -1,0 +1,697 @@
+ /* Define Color Variables */
+        :root {
+            --color-main-green: #6D9773;
+            --color-deep-green: #0C3B2E;
+            --color-mustard-yellow: #BB8A52;
+            --color-bright-gold: #FFBA00;
+            --color-neutral-bg: #F8FAF7; /* Slightly tinted off-white */
+            --color-primary-text: #333333;
+            --color-secondary-text: #6B7280;
+            --color-white: #ffffff;
+            --color-red-tag: #ef4444; /* Retained for high contrast */
+            --color-orange-tag: #f97316; /* Retained for high contrast */
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Inter', sans-serif; /* Primary font for body text */
+            background-color: var(--color-neutral-bg);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--color-primary-text);
+        }
+
+        /* Utility Classes (updated to use variables) */
+        .container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .flex-col { flex-direction: column; }
+        .flex-none { flex-shrink: 0; }
+        .flex-grow { flex-grow: 1; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        .z-10 { z-index: 10; }
+        .z-30 { z-index: 30; }
+        .z-50 { z-index: 50; }
+        .text-center { text-align: center; }
+        .overflow-hidden { overflow: hidden; }
+        .object-cover { object-fit: cover; }
+        .w-full { width: 100%; }
+        .h-48 { height: 12rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-full { border-radius: 9999px; }
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .transition-transform { transition-property: transform; transition-duration: 0.3s; transition-timing-function: ease; }
+
+        /* Colors (updated to use variables where applicable) */
+        .bg-white { background-color: var(--color-white); }
+        .bg-gray-50 { background-color: var(--color-neutral-bg); } /* Using neutral-bg for general light sections */
+        .bg-gray-800 { background-color: var(--color-deep-green); } /* Using deep green for dark headers/footers */
+        .bg-yellow-400 { background-color: var(--color-bright-gold); }
+        .bg-green-500 { background-color: var(--color-main-green); } /* Changed to main green */
+        .bg-red-500 { background-color: var(--color-red-tag); }
+        .bg-orange-500 { background-color: var(--color-orange-tag); }
+        .text-white { color: var(--color-white); }
+        .text-gray-900 { color: var(--color-primary-text); }
+        .text-gray-800 { color: var(--color-deep-green); } /* Changed to deep green */
+        .text-gray-700 { color: var(--color-primary-text); }
+        .text-gray-600 { color: var(--color-secondary-text); }
+        .text-gray-500 { color: var(--color-secondary-text); }
+        .text-yellow-400 { color: var(--color-bright-gold); }
+        .text-green-500 { color: var(--color-main-green); }
+        .text-D9ED5E { color: var(--color-bright-gold); } /* Re-mapped for general bright gold use */
+
+
+        /* Typography */
+        .text-xs { font-size: 0.75rem; line-height: 1rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-base { font-size: 1rem; line-height: 1.5rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .font-extrabold { font-weight: 800; }
+        .font-bold { font-weight: 700; }
+        .font-semibold { font-weight: 600; }
+        .font-medium { font-weight: 500; }
+        .leading-tight { line-height: 1.25; }
+        .drop-shadow-lg { filter: drop-shadow(0 10px 8px rgba(0,0,0,0.04)) drop-shadow(0 4px 3px rgba(0,0,0,0.1)); }
+        .uppercase { text-transform: uppercase; }
+        .line-through { text-decoration-line: line-through; }
+
+        /* Spacing */
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        .py-12 { padding-top: 3rem; padding-bottom: 3rem; }
+        .pb-4 { padding-bottom: 1rem; }
+        .pl-4 { padding-left: 1rem; }
+        .pr-4 { padding-right: 1rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-3 { margin-bottom: 0.75rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .ml-4 { margin-left: 1rem; }
+        .mr-4 { margin-right: 1rem; }
+
+        /* Hero Section */
+        .hero-background {
+            background-image: url('/img/ev\ bc.jpg'); /* Updated placeholder with new colors */
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            min-height: 500px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            color: var(--color-white);
+        }
+        .hero-overlay {
+            background-color: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 6rem; /* Adjusted margin-bottom for search bar */
+        }
+        /* .hero-tag was removed as per user request */
+        .hero-title {
+            font-family: 'Merienda', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.2s;
+        }
+        .hero-body {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 0.7s;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        .hero-cta-button {
+            background-color: var(--color-bright-gold);
+            color: var(--color-primary-text); /* Dark text on bright gold */
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 1.2s;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        .hero-cta-button:hover {
+            background-color: #e0a300; /* Slightly darker gold on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Logo specific styles */
+        .logo-section img {
+            max-width: 200px; /* Adjust as needed */
+            height: auto;
+            border-radius: 8px; /* Slightly rounded corners for the image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for the image */
+        }
+
+        /* Search Bar Section */
+        .search-bar-container {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%); /* Adjust to overlap */
+            width: 90%;
+            max-width: 1000px;
+            background-color: var(--color-white);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: repeat(1, 1fr); /* Default 1 column */
+            gap: 1rem;
+            z-index: 30;
+        }
+        .search-input-group {
+            position: relative; /* For dropdown positioning */
+            display: flex;
+            align-items: center;
+            background-color: var(--color-white);
+            border-radius: 9999px;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid #e5e7eb;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            cursor: pointer; /* Indicate clickable */
+        }
+        .search-input-group input {
+            flex-grow: 1;
+            outline: none;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            color: var(--color-primary-text);
+            cursor: pointer; /* Indicate clickable */
+        }
+        .search-input-group input::placeholder {
+            color: var(--color-secondary-text);
+        }
+        .search-input-group span {
+            color: var(--color-secondary-text);
+            margin-right: 0.5rem;
+        }
+        .search-input-group.active { /* Class added when dropdown is open */
+            border-color: var(--color-main-green);
+            box-shadow: 0 0 0 3px rgba(109, 151, 115, 0.5); /* Lighter main green shadow */
+        }
+        .search-button {
+            background-color: var(--color-main-green);
+            color: var(--color-white);
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: #55795C; /* Slightly darker main green */
+        }
+
+        /* Search Dropdown Content */
+        .search-dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; /* Position below the input group */
+            left: 0;
+            width: 100%;
+            background-color: var(--color-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            max-height: 300px; /* Limit height for scrollability */
+            overflow-y: auto; /* Enable vertical scroll */
+            z-index: 40; /* Above other search elements, below hero content */
+            padding: 0.5rem;
+            margin-top: 0.5rem; /* Space between input and dropdown */
+        }
+        .search-dropdown-content.active {
+            display: block;
+        }
+        .search-dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            border-radius: 0.375rem;
+            color: var(--color-primary-text);
+        }
+        .search-dropdown-item:hover {
+            background-color: #E6F0E8; /* Lighter version of neutral-bg or very light green */
+        }
+        .search-dropdown-item .icon {
+            font-size: 1.2rem;
+            margin-right: 0.75rem;
+            color: var(--color-main-green); /* Main green icon color */
+            width: 1.5rem; /* Fixed width for alignment */
+            text-align: center;
+        }
+        .search-dropdown-item .icon-yellow {
+            color: var(--color-mustard-yellow); /* Mustard yellow icon color */
+        }
+        .search-dropdown-item .text {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        .search-dropdown-item .arrow {
+            font-size: 1rem;
+            color: var(--color-secondary-text);
+        }
+
+        /* Popular Trips Section (now a slider on index.html) */
+        .popular-trips-section {
+            padding-top: 3rem; /* py-12 */
+            padding-bottom: 3rem;
+            background-color: var(--color-neutral-bg);
+            margin-top: 4rem; /* Adjusted top margin for search bar overlay */
+        }
+        .popular-trips-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .popular-trips-title {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700;
+            color: var(--color-deep-green); /* Deep green for titles */
+            flex-grow: 1; /* Allows title to take available space */
+            text-align: center; /* Center the text within its flex-grow space */
+        }
+        .popular-trips-nav-buttons { /* Slider navigation buttons */
+            display: flex;
+            gap: 0.5rem; /* space-x-2 */
+        }
+        .popular-nav-button {
+            background-color: var(--color-white);
+            padding: 0.5rem; /* p-2 */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+            color: var(--color-main-green); /* Main green arrow color */
+            border: 1px solid #D1D5DB; /* Light grey border */
+            cursor: pointer;
+            font-size: 1.25rem; /* text-xl */
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+        }
+        .popular-nav-button:hover {
+            background-color: #E6F0E8; /* Lighter hover background */
+            border-color: var(--color-main-green);
+        }
+        .scroll-container { /* Slider container */
+            overflow-x: scroll; /* Allow horizontal scroll */
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+            display: flex;
+            padding-bottom: 1rem; /* pb-4 */
+            scroll-behavior: smooth; /* Smooth scroll for buttons */
+        }
+        .scroll-container::-webkit-scrollbar { /* Hide scrollbar for Chrome, Safari, Opera */
+            display: none;
+        }
+        .trip-card {
+            flex-shrink: 0;
+            width: 300px; /* Default width for mobile */
+            background-color: var(--color-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: flex; /* Flex-col for content within card */
+            flex-direction: column;
+        }
+        .trip-card:not(:first-child) {
+            margin-left: 1.5rem; /* Gap between slider items */
+        }
+        .trip-card-image-container {
+            position: relative;
+        }
+        .trip-card-image {
+            width: 100%;
+            height: 12rem; /* h-48 */
+            object-fit: cover;
+        }
+        .trip-tag {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background-color: var(--color-red-tag);
+            color: var(--color-white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+        }
+        .trip-tag.orange {
+            background-color: var(--color-orange-tag);
+        }
+        .trip-card-content {
+            padding: 1rem;
+            flex-grow: 1; /* Makes content fill available space */
+            display: flex;
+            flex-direction: column;
+        }
+        .trip-rating {
+            color: var(--color-bright-gold);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+        .trip-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--color-deep-green);
+            margin-bottom: 0.5rem;
+        }
+        .trip-details {
+            color: var(--color-secondary-text);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+        .trip-description {
+            color: var(--color-primary-text);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .trip-price-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+        .add-to-compare-button {
+            border: 1px solid var(--color-mustard-yellow); /* Mustard border */
+            color: var(--color-mustard-yellow); /* Mustard text */
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
+        .add-to-compare-button:hover {
+            background-color: #F0E6D2; /* Lighter mustard hover */
+            color: var(--color-mustard-yellow);
+            border-color: var(--color-mustard-yellow);
+        }
+        .trip-price {
+            color: var(--color-deep-green); /* Deep green for price */
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+        .trip-old-price {
+            color: var(--color-secondary-text);
+            text-decoration-line: line-through;
+        }
+        .trip-view-button {
+            background-color: var(--color-main-green); /* Main green background */
+            color: var(--color-white);
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.2s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            font-size: 1rem;
+        }
+        .trip-view-button:hover {
+            background-color: #55795C; /* Darker main green */
+            transform: translateY(-2px);
+        }
+
+
+        /* View All Treks Button */
+        .view-all-button-container {
+            text-align: center;
+            margin-top: 2.5rem; /* space below slider */
+            margin-bottom: 3rem; /* space before next section */
+        }
+        .view-all-button {
+            background-color: var(--color-bright-gold); /* Bright gold accent */
+            color: var(--color-primary-text); /* Dark text on bright gold */
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            text-decoration: none; /* Remove underline from link */
+            display: inline-block; /* Allows padding and margins */
+        }
+        .view-all-button:hover {
+            background-color: #e0a300; /* Darker gold */
+            transform: translateY(-2px);
+        }
+
+
+        
+
+        /* Provincial Map Section */
+        .provincial-map-section {
+            /* padding-top: 3rem;
+            padding-bottom: 1rem;
+            background-color: var(--color-deep-green); */
+             background: linear-gradient(90deg, var(--color-main-green), var(--color-deep-green)100%);
+  min-height: 60vh;
+  padding-top: 3rem;
+            padding-bottom: 1rem;
+        }
+        .provincial-map-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .map-container {
+            position: relative;
+            width: 90%;
+            max-width: 1000px; /* Adjust max-width as needed */
+            margin: 0 auto;
+            aspect-ratio: 1.3 / 1; /* Aspect ratio closer to Nepal's shape */
+            background-size: contain; /* Ensure the map fits within the container */
+            background-repeat: no-repeat;
+            background-position: center;
+          
+            overflow: hidden; /* Ensure overlays don't spill out */
+        }
+.map-container .province {
+      fill: var(--color-white);
+      stroke: var(--color-main-green);
+      stroke-width: 1;
+      transition: fill 0.2s ease;
+    }
+    .province:hover {
+      fill: var(--color-bright-gold);
+      cursor: pointer;
+    }
+    .province-label {
+      font-size: 14px;
+      color: white;
+      fill: var(--color-bright-gold);
+      pointer-events: none; /* Let clicks go to the shape */
+      text-anchor: middle;  /* Center the label */
+    }
+        /* Slide-in animation for Trending Destinations */
+        .slide-in-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .slide-in-card.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+              /* Back to Top Button */
+        #back-to-top-btn {
+            /* Removed fixed positioning from CSS to allow centering */
+            display: inline-block; /* Changed to inline-block for centering with text-align */
+            background-color: var(--color-bright-gold); /* Dark green background */
+            color: var(--color-white); /* White text */
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            border-radius: 9999px; /* Fully rounded */
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+            /* Removed z-index as it's no longer fixed */
+            opacity: 0; /* Hidden by default */
+            visibility: hidden; /* Hidden by default */
+        }
+
+        #back-to-top-btn:hover {
+            background-color: var(--color-orange-tag); 
+            transform: translateY(-2px);
+        }
+
+        #back-to-top-btn.show {
+            opacity: 1; /* Show when 'show' class is added */
+            visibility: visible; /* Show when 'show' class is added */
+        }
+        /* Footer */
+        .footer {
+            background-color: var(--color-deep-green);
+            color: var(--color-white);
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            margin-top: auto;
+        }
+        .no-results-message {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--color-secondary-text);
+            margin-top: 2rem;
+            padding: 1rem;
+            border: 1px dashed #d1d5db;
+            border-radius: 0.5rem;
+            display: none; /* Hidden by default */
+        }
+
+        /* Responsive Adjustments */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (min-width: 640px) { /* sm breakpoint */
+            .trending-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .province-overlay {
+                font-size: 1rem; /* Slightly larger text on tablets */
+            }
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .hero-background {
+                height: 80vh;
+            }
+            .hero-content {
+                margin-bottom: 8rem;
+            }
+            .hero-title {
+                font-size: 3.75rem;
+            }
+            .search-bar-container {
+                /* 2 dropdowns + 1 button */
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .popular-trips-section {
+                margin-top: 6rem; /* mt-24 */
+            }
+            /* The .trip-card width is fixed for slider, so no grid adjustments for it here */
+            .trending-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+             .province-overlay {
+                font-size: 1.1rem; /* Larger text on desktop */
+                padding: 0.75rem;
+            }
+            .map-container {
+                aspect-ratio: 1.5 / 1; /* Adjust aspect ratio for wider screens if needed */
+            }
+        }
+
+        /* Mobile Adjustments (Default styles are mobile-first, so specific overrides for smaller screens are minimal) */
+        @media (max-width: 767px) { /* Max width for mobile-specific overrides */
+            .hero-background {
+                height: 70vh; /* Slightly less height on mobile */
+            }
+            .hero-title {
+                font-size: 2.25rem; /* text-4xl on mobile */
+            }
+            .hero-body {
+                font-size: 0.95rem; /* Smaller body text on mobile */
+                margin-bottom: 1.5rem;
+            }
+            .hero-cta-button {
+                font-size: 0.95rem;
+                padding: 0.7rem 1.5rem;
+            }
+            .search-bar-container {
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+            .search-input-group {
+                padding: 0.5rem 1rem;
+            }
+            .search-button {
+                padding: 0.6rem 1.2rem;
+            }
+            .popular-trips-section {
+                margin-top: 4rem; /* mt-16 */
+            }
+
+            /* Adjust map overlays for smaller screens */
+            .province-overlay {
+                font-size: 0.75rem; /* Smaller text for provinces */
+                padding: 0.3rem;
+            }
+            .map-container {
+                aspect-ratio: 1.2 / 1; /* Adjust aspect ratio for mobile for better fit */
+            }
+        }

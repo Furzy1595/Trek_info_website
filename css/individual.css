@@ -1,0 +1,478 @@
+ /* Basic Reset & Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6; /* Light grayish background */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 1rem;
+            flex-grow: 1;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(90deg, #2c3e50, #3498db); /* Dark blue to lighter blue gradient */
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-logo a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+
+        .nav-links a:hover {
+            background-color: #ecf0f1; /* Light gray background on hover */
+            color: #2c3e50; /* Dark text color */
+        }
+        
+        /* Main Content Wrapper for two-column layout */
+        .main-content-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            gap: 2rem; /* Space between destination info and side content */
+            margin-bottom: 2rem;
+        }
+
+        /* Destination Info Section (Left Column) */
+        .destination-info {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            flex: 2; /* Takes up more space */
+            min-width: 300px; /* Minimum width before wrapping */
+        }
+
+        .destination-info h1 {
+            font-size: 2.2rem;
+            color: #2c3e50; /* Dark blue */
+            margin-bottom: 1rem;
+        }
+        
+        .destination-image {
+            width: 100%;
+            max-height: 350px; /* Adjusted height */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .destination-info p {
+            font-size: 1.05rem; /* Slightly adjusted font size */
+            color: #555;
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+        .destination-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Side Content Wrapper (for Weather and Budget) */
+        .side-content-wrapper {
+            display: flex;
+            flex-direction: column; /* Stack children vertically */
+            gap: 2rem; /* Space between weather and budget sections */
+            flex: 1; /* Takes up the remaining space */
+            min-width: 280px; /* Ensures it doesn't shrink too much */
+        }
+
+        /* Weather Section (Right Column - Aside) */
+        .weather-section, .budget-calculator-section, .more-info-section { /* Apply common styles to all aside sections */
+            background-color: #fff; /* White background for the section title area */
+            padding: 1.5rem; /* Padding for the section itself */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            height: fit-content; /* Make the section only as tall as its content */
+        }
+
+        .weather-section h2, .budget-calculator-section h2, .more-info-section h2 {
+            font-size: 1.5rem; /* Adjusted size */
+            color: #2980b9; /* Medium blue */
+            margin-bottom: 1rem; /* Reduced margin */
+            text-align: center;
+        }
+
+        .weather-card {
+            background: linear-gradient(135deg, #6D9773, #0C3B2E); /* Blue to purple gradient */
+            color: white;
+            padding: 1.2rem; /* Adjusted padding */
+            border-radius: 8px; /* Consistent rounding */
+            text-align: center;
+        }
+        
+        .weather-card h3 { /* Location name inside card */
+            font-size: 1.3rem; /* Adjusted size */
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .weather-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem; /* Adjusted gap */
+            margin-bottom: 0.8rem;
+        }
+
+        .weather-icon-img {
+            width: 60px; /* Adjusted size */
+            height: 60px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 50%;
+        }
+
+        .weather-temperature {
+            font-size: 2.8rem; /* Adjusted size */
+            font-weight: 300;
+        }
+
+        .weather-description {
+            font-size: 1rem; /* Adjusted size */
+            text-transform: capitalize;
+            margin-bottom: 1rem;
+        }
+
+        .weather-details-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for smaller card */
+            gap: 0.6rem; /* Adjusted gap */
+            font-size: 0.85rem; /* Adjusted size */
+        }
+        .weather-detail-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.6rem; /* Adjusted padding */
+            border-radius: 4px;
+            text-align: left; /* Align text left for better readability */
+        }
+        .weather-detail-item strong {
+            font-weight: 500;
+            margin-right: 0.3rem;
+        }
+
+        /* Budget Calculator Styling */
+        .budget-calculator-section {
+            
+            padding-bottom: 2rem; /* Add padding at bottom for spacing */
+        }
+
+        .budget-calculator-content {
+            color: white;
+              background: linear-gradient(135deg, #6D9773, #0C3B2E); 
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05); /* Inner shadow */
+        }
+
+        .budget-input-group {
+            margin-bottom: 1rem;
+        }
+
+        .budget-input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: white;
+            font-size: 0.95rem;
+        }
+
+        .budget-input-group input[type="number"] {
+            width: calc(100% - 20px); /* Adjust for padding */
+            padding: 0.7rem 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px ;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+            -moz-appearance: textfield; /* Remove number input arrows for Firefox */
+        }
+        .budget-input-group input[type="number"]::-webkit-outer-spin-button,
+        .budget-input-group input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none; /* Remove number input arrows for Chrome/Safari */
+            margin: 0;
+        }
+
+        .budget-calculate-btn {
+            display: block;
+            width: 100%;
+            padding: 0.9rem;
+            background-color:  #FFBA00; /* Blue button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .budget-calculate-btn:hover {
+            background-color:  #BB8A52; /* Darker blue on hover */
+        }
+
+        .budget-result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #e8f5e9; /* Light green for success */
+            border: 1px solid #a3e9a4;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2e7d32; /* Dark green text */
+        }
+        .budget-result strong {
+            color: #1b5e20; /* Even darker green */
+        }
+
+        /* More Info Section Styling */
+        .more-info-section {
+            
+            margin-top: 2rem; /* Add space above if main content wrapped */
+            /* Inherits background, padding, border-radius, box-shadow from common aside styles */
+        }
+
+        .more-info-section h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .more-info-section p {
+            font-size: 0.95rem;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .photo-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .photo-gallery-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .photo-gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .map-and-details-wrapper {
+            display: flex;
+            flex-direction: column; /* Default to column on small screens */
+            gap: 1.5rem;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 50%; /* Adjusted to make map smaller (e.g., 16:9 aspect ratio) */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            flex-shrink: 0; /* Prevent map from shrinking too much */
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 8px; /* Match container border-radius */
+        }
+
+        .map-side-content {
+            background-color: #f8f8f8;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+            font-size: 0.9rem;
+            color: #444;
+            flex-grow: 1; /* Allow content to take available space */
+        }
+        .map-side-content h4 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Loading and Error Messages (Weather Card) */
+        .weather-loading-message, .weather-error-message {
+            padding: 1rem;
+            text-align: center;
+        }
+        .weather-loading-message p, .weather-error-message p {
+            font-size: 1rem;
+        }
+        .weather-error-message {
+            color: #ffdddd; 
+            background-color: rgba(200, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #fff;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 0.5rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50; 
+            color: #ecf0f1; 
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: auto; 
+        }
+
+        /* Responsive Design */
+        @media (min-width: 769px) {
+            .map-and-details-wrapper {
+                flex-direction: row;
+            }
+            .map-container {
+                flex: 1.5;
+            }
+            .map-side-content {
+                flex: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                margin-top: 1rem;
+                flex-direction: column;
+                width: 100%;
+            }
+            .nav-links li {
+                margin-left: 0;
+                margin-bottom: 0.5rem;
+                width: 100%;
+            }
+            .nav-links a {
+                display: block;
+                text-align: center;
+            }
+            
+            .main-content-wrapper {
+                flex-direction: column;
+            }
+            .destination-info, .side-content-wrapper {
+                flex: 1 1 100%;
+            }
+            .weather-section, .budget-calculator-section, .more-info-section {
+                margin-top: 0;
+            }
+
+            .destination-info h1 {
+                font-size: 1.8rem;
+            }
+            .weather-section h2, .budget-calculator-section h2, .more-info-section h2 {
+                font-size: 1.5rem;
+            }
+            .weather-temperature {
+                font-size: 2.5rem;
+            }
+            .weather-details-grid {
+                grid-template-columns: 1fr;
+            }
+            .photo-gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            }
+        }
+        @media (max-width: 480px) {
+            .nav-logo a {
+                font-size: 1.5rem;
+            }
+            .destination-info h1 {
+                font-size: 1.6rem;
+            }
+            .weather-card h3 {
+                font-size: 1.1rem;
+            }
+            .weather-temperature {
+                font-size: 2.2rem;
+            }
+        }
