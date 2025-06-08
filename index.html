@@ -14,10 +14,11 @@
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <!-- Logo Section Updated to Image Logo -->
-                <div class="logo-section" style="margin-bottom: 1rem;">
-                    <img src="/img/LOGO_WB.png" alt="Gantabya Logo" class="logo-image">
-                </div>
-                <h2 class="hero-title">Discover Trails. Embrace Journeys.</h2>
+                <div class="hero-title" style="margin-bottom: 1rem;">
+  <h1 style="font-size: x-large; ">“Discover Trails. Embrace Journeys”</h1>
+</div>
+
+                <h2 class="hero-title">Every path in Nepal leads to a new story — start yours with Gantabya.</h2>
                 <button class="hero-cta-button" id="find-your-trek-button">FIND YOUR TREK</button>
             </div>
 
@@ -105,8 +106,10 @@
                 </div>
 
                 <div id="popular-trips-scroll" class="scroll-container">
+                  
+                
                     <!-- NEPALI TREK CARDS for the slider -->
-                    <div class="trip-card" data-place="Koshi Province" data-style="High Altitude,Adventure">
+                     <div class="trip-card" data-place="Koshi Province" data-style="High Altitude,Adventure">
                         <div class="trip-card-image-container">
                             <img src="/img/EBC/ebc1.jpg" alt="Everest Base Camp Trek" class="trip-card-image">
                             <span class="trip-tag">Iconic Trek</span>
@@ -122,7 +125,7 @@
                                 
                                 <span class="trip-price">From Rs.50000</span>
                             </div>
-                            <button class="trip-view-button">VIEW TREK</button>
+                             <button href="individual.html?id=1" class="trip-view-button">VIEW TREK</button>
                         </div>
                     </div>
                     <div class="trip-card" data-place="Gandaki Province" data-style="Mountains,Scenic">
@@ -220,7 +223,7 @@
                             <button class="trip-view-button">VIEW TREK</button>
                         </div>
                     </div>
-                </section>
+                </section> 
         <!-- View All Treks Button -->
         <div class="view-all-button-container">
             <a href="all-treks.html" class="view-all-button">VIEW ALL TREKS</a>
@@ -229,10 +232,13 @@
         
 
         <!-- Provincial Map Section -->
-        <section class="provincial-map-section" id="map-section">
-            <div class="container">
-                <h2 class="provincial-map-title">Explore Nepal by Province</h2>
-                <p class="text-center text-secondary-text mb-6" style="color: white;">Click on a province to Explore that region.</p>
+         <section class="provincial-map-section" id="map-section">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h1 class="logo">Explore Nepal</h1>
+                <p class="challenge-question">Think you've seen Nepal?</p>
+                <p class="call-to-action">Discover your next adventure!</p>
+            </div>
                 <div class="map-container">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet" viewBox="3.1510019851078823 88.99906262937573 637.5847884826144 322.1037384445946" >
     
@@ -256,7 +262,8 @@
                      
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
  <!-- Back to Top Button Container for spacing -->
         <div class="back-to-top-button-container" style="text-align: center; margin-top: 2rem; margin-bottom: 2rem;">
             <button id="back-to-top-btn" title="Back to Top">↑ Back to Top</button>
@@ -271,6 +278,7 @@
     </div>
 
     <script>
+        
          // --- Popular Trips Slider Logic ---
         const popularTripsScrollContainer = document.getElementById('popular-trips-scroll');
         const popularPrevBtn = document.getElementById('popular-prev');

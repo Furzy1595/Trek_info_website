@@ -115,7 +115,7 @@
 
         /* Hero Section */
         .hero-background {
-            background-image: url('/img/ev\ bc.jpg'); /* Updated placeholder with new colors */
+            background-image: url('/img/bg2.jpg'); /* Updated placeholder with new colors */
             background-size: cover;
             background-position: center;
             height: 80vh;
@@ -429,22 +429,7 @@
             align-items: center;
             margin-top: auto;
         }
-        .add-to-compare-button {
-            border: 1px solid var(--color-mustard-yellow); /* Mustard border */
-            color: var(--color-mustard-yellow); /* Mustard text */
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-            background-color: transparent;
-            cursor: pointer;
-            font-size: 0.875rem;
-        }
-        .add-to-compare-button:hover {
-            background-color: #F0E6D2; /* Lighter mustard hover */
-            color: var(--color-mustard-yellow);
-            border-color: var(--color-mustard-yellow);
-        }
+        
         .trip-price {
             color: var(--color-deep-green); /* Deep green for price */
             font-weight: 700;
@@ -504,33 +489,88 @@
         
 
         /* Provincial Map Section */
-        .provincial-map-section {
-            /* padding-top: 3rem;
-            padding-bottom: 1rem;
-            background-color: var(--color-deep-green); */
-             background: linear-gradient(90deg, var(--color-main-green), var(--color-deep-green)100%);
-  min-height: 60vh;
-  padding-top: 3rem;
-            padding-bottom: 1rem;
+         .provincial-map-section {
+            background-color: black; /* Solid black background */
+            color: white; /* White text color for general content */
+            padding: 50px 20px; /* Adjust padding as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%; /* Ensure it takes full width */
+            overflow: hidden; /* Hide any overflow from the map */
+            box-sizing: border-box; /* Include padding in element's total width and height */
         }
-        .provincial-map-title {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1.5rem;
-            text-align: center;
+
+        .content-wrapper {
+            display: flex;
+            justify-content: center; /* Centers the entire text + map block */
+            align-items: center;
+            max-width: 1200px; /* Or whatever max width suits your design */
+            width: 100%;
+            gap: 60px; /* Gap between text and map. Adjust this value (e.g., 80px, 100px) */
         }
-        .map-container {
-            position: relative;
-            width: 90%;
-            max-width: 1000px; /* Adjust max-width as needed */
-            margin: 0 auto;
-            aspect-ratio: 1.3 / 1; /* Aspect ratio closer to Nepal's shape */
-            background-size: contain; /* Ensure the map fits within the container */
+
+        .text-content {
+            flex: 1; /* Allows text content to take available space */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start; /* CHANGED: Aligns text elements to the left */
+            text-align: left; /* CHANGED: Centers the text horizontally within its block */
+            padding-left: 20px; /* ADDED: Small padding to give space from the left edge */
+        }
+
+        .logo {
+            font-family: 'Arial', sans-serif; /* Or a similar clean sans-serif font */
+            font-size: 4em; /* Adjust size as needed */
+            font-weight: bold;
+            color: white; /* Ensure logo is white */
+            margin-bottom: 20px; /* Space below the logo */
+            line-height: 1; /* Tighter line height for the logo */
+        }
+
+        .challenge-question {
+            font-family: 'Arial', sans-serif; /* Or a similar clean sans-serif font */
+            font-size: 2.5em; /* Adjust size as needed */
+            font-weight: bold;
+            color:  #1b5e20; /* The neon green color */
+            padding-bottom: 10px; /* Space below text */
+            margin-bottom: 2px; /* Adjusted space between question and call to action */
+            display: inline-block; /* Ensures consistent layout */
+        }
+
+        .call-to-action {
+            font-family: 'Arial', sans-serif; /* Or a similar clean sans-serif font */
+            font-size: 1.5em; /* Adjust size as needed */
+            color: white; /* White text */
+            padding-bottom: 10px; /* Space below text */
+            display: inline-block; /* Ensure consistent layout */
+        }
+
+        /* Map container now hosts the SVG as a background image */
+        .provincial-map-section .map-container {
+            position: relative; /* Added from your input */
+            width: 700px; /* Example width - adjust as needed, perhaps '50%' */
+            height: 300px; /* Example height - crucial for background images */
+            max-width: 600px; /* Example max-width - adjust as needed */
+
+            flex-grow: 0;
+            flex-shrink: 0;
+
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-          
-            overflow: hidden; /* Ensure overlays don't spill out */
+
+            padding-right: 5px;
+            padding-bottom: 5px;
+            overflow: hidden;
+
+            opacity: 0.8;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .provincial-map-section .map-container:hover {
+            opacity: 1;
         }
 .map-container .province {
       fill: var(--color-white);
@@ -563,7 +603,7 @@
         #back-to-top-btn {
             /* Removed fixed positioning from CSS to allow centering */
             display: inline-block; /* Changed to inline-block for centering with text-align */
-            background-color: var(--color-bright-gold); /* Dark green background */
+            background-color: var(--color-bright-gold); 
             color: var(--color-white); /* White text */
             font-size: 1rem;
             font-weight: 600;
@@ -579,7 +619,7 @@
         }
 
         #back-to-top-btn:hover {
-            background-color: var(--color-orange-tag); 
+           background-color: #e0a300; /* Slightly darker gold on hover */
             transform: translateY(-2px);
         }
 

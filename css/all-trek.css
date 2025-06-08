@@ -255,7 +255,7 @@
         /* Learn More Button Style */
         .learn-more-button {
             padding: 8px 12px; /* Smaller padding */
-            background-color: var(--color-mustard-yellow);
+             background-color: var(--color-main-green);
             color: var(--color-white);
             border: none;
             border-radius: 5px;
@@ -269,9 +269,10 @@
         }
 
         .learn-more-button:hover {
-            background-color: #d19a4e; /* A slightly darker mustard */
+            background-color: #55795C; /* Darker main green */
             transform: translateY(-2px);
         }
+        
 
         .learn-more-button:active {
             transform: translateY(0);
