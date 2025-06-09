@@ -604,7 +604,7 @@
             /* Removed fixed positioning from CSS to allow centering */
             display: inline-block; /* Changed to inline-block for centering with text-align */
             background-color: var(--color-bright-gold); 
-            color: var(--color-white); /* White text */
+             color: var(--color-primary-text); /* Dark text on bright gold */
             font-size: 1rem;
             font-weight: 600;
             padding: 0.75rem 1rem;
@@ -725,13 +725,48 @@
             .popular-trips-section {
                 margin-top: 4rem; /* mt-16 */
             }
-
-            /* Adjust map overlays for smaller screens */
-            .province-overlay {
-                font-size: 0.75rem; /* Smaller text for provinces */
-                padding: 0.3rem;
-            }
-            .map-container {
-                aspect-ratio: 1.2 / 1; /* Adjust aspect ratio for mobile for better fit */
-            }
         }
+            /* Adjust map overlays for smaller screens */
+          /* Media Queries for Phone Screens */
+@media (max-width: 768px) {
+    .provincial-map-section {
+        flex-direction: column; /* Stack content vertically on smaller screens */
+        padding: 30px 15px; /* Adjust padding for smaller screens */
+        text-align: center; /* Center align text content */
+    }
+
+    .content-wrapper {
+        flex-direction: column; /* Stack text and map vertically */
+        gap: 30px; /* Reduce gap between text and map */
+        max-width: 90%; /* Adjust max-width for better responsiveness */
+    }
+
+    .text-content {
+        align-items: center; /* Center align text elements */
+        padding-left: 0; /* Remove left padding */
+        text-align: center; /* Center text within its block */
+    }
+
+    .logo {
+        font-size: 2.5em; /* Reduce logo size for phones */
+        margin-bottom: 15px;
+    }
+
+    .challenge-question {
+        font-size: 1.8em; /* Reduce question size for phones */
+        margin-bottom: 5px;
+    }
+
+    .call-to-action {
+        font-size: 1.2em; /* Reduce call to action size for phones */
+    }
+
+    .provincial-map-section .map-container {
+        width: 100%; /* Make map container take full width */
+        height: 250px; /* Adjust height for phone screens */
+        max-width: 100%; /* Remove max-width constraint for full responsiveness */
+        padding-right: 0; /* Remove right padding */
+        padding-bottom: 0; /* Remove bottom padding */
+    }
+}
+           
