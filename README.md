@@ -64,7 +64,7 @@ We welcome contributions! To contribute:
 
 ## 📄 License
 
-This project is open source and free for any family business or small enterprise. Use it, improve it, and share it with others!
+This project is open source and free. Use it, improve it, and share it with others!
 
 ---
 
