@@ -72,7 +72,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙋‍♂️ Support & Contact
 
-For questions, suggestions, or feedback, please open an issue or contact the maintainer at [your-email@example.com].
+For questions, suggestions, or feedback, please contact at acharyanirmal159@gmail.com.
 
 ---
 
