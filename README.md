@@ -60,13 +60,11 @@ We welcome contributions! To contribute:
 4. Push to your branch (`git push origin feature/your-feature`)
 5. Open a Pull Request
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
 
----
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and free for any family business or small enterprise. Use it, improve it, and share it with others!
 
 ---
 
